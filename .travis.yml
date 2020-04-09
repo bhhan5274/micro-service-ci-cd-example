@@ -12,6 +12,10 @@ cache:
   directories:
     - '$HOME/.m2/repository'
 
+env:
+  matrix:
+    - BHHAN_DOCKER_IMAGE=bhhan87/bhhan-licensing-service:chapter2
+
 script: 
     - 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
     - './mvnw clean package docker:build'
