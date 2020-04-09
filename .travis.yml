@@ -12,9 +12,10 @@ cache:
   directories:
     - '$HOME/.m2/repository'
 
-script: 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD;
-         ./mvnw clean package docker:build;
-         docker push $BHHAN_DOCKER_IMAGE'
+script: 
+    - 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
+    - './mvnw clean package docker:build'
+    - 'docker push $BHHAN_DOCKER_IMAGE'
 
 notifications:
   email:
