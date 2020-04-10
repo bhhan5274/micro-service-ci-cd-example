@@ -13,7 +13,7 @@ cache:
     - '$HOME/.m2'
 
 env:
-  matrix:
+  global:
     - CONFIG_IMAGE=bhhan87/bhhan-config:chapter3
     - LICENSE_IMAGE=bhhan87/bhhan-licensing-service:chapter2
 
