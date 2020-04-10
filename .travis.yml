@@ -14,12 +14,14 @@ cache:
 
 env:
   matrix:
-    - BHHAN_DOCKER_IMAGE=bhhan87/bhhan-licensing-service:chapter2
+    - BHHAN_LICENSE_IMAGE=bhhan87/bhhan-licensing-service:chapter2
+    - BHHAN_CONFIG_IMAGE=bhhan87/bhhan-config:chapter3
 
 script: 
     - 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
     - './mvnw clean package docker:build'
-    - 'docker push $BHHAN_DOCKER_IMAGE'
+    - 'docker push $BHHAN_LICENSE_IMAGE'
+    - 'docker push $BHHAN_CONFIG_IMAGE'
 
 notifications:
   email:
