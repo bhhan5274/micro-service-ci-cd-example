@@ -1,6 +1,5 @@
 management:
-  endpoint:
-    health:
-      show-details: always
-      diskspace:
-        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
