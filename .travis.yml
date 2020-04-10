@@ -13,8 +13,9 @@ cache:
     - '$HOME/.m2'
 
 env:
-  - BHHAN_CONFIG_IMAGE=bhhan87/bhhan-config:chapter3
-  - BHHAN_LICENSE_IMAGE=bhhan87/bhhan-licensing-service:chapter2
+  matrix:
+    - BHHAN_CONFIG_IMAGE=bhhan87/bhhan-config:chapter3
+    - BHHAN_LICENSE_IMAGE=bhhan87/bhhan-licensing-service:chapter2
 
 script: 
     - 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
