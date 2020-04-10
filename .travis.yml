@@ -20,8 +20,7 @@ env:
 script: 
     - 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
     - './mvnw clean package docker:build'
-    - 'docker push $BHHAN_LICENSE_IMAGE'
-    - 'docker push $BHHAN_CONFIG_IMAGE'
+    - 'docker push $BHHAN_LICENSE_IMAGE && docker push $BHHAN_CONFIG_IMAGE'
 
 notifications:
   email:
